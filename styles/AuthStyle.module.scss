@@ -1,0 +1,243 @@
+$colors:(
+   orangish:#fb6d6c,
+   bluish:#2b92e4
+);
+section.auth_layout{
+   position: absolute;
+   width: 90%;
+   height: 90vh;
+   top: 20px ;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: white;
+   z-index: 20;
+  
+   box-shadow: 2px 2px 20px gray;
+   border-radius: 10px;
+   .auth_layout_page{
+       position: relative;
+       width: 100%;
+       height: inherit;
+       display: flex;
+   button,input[type=submit]{
+    width: max-content;
+    height: 35px;
+    font-size: 1.2rem; 
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;  
+    padding: 0 50px; 
+    transition: 0.5s ease-in-out;
+   }
+   button:hover,input[type=submit]:hover{
+       transform: scale(1.1);
+   }
+   .welcome_user{
+       width: 40%;
+       height: inherit;
+       background-color: map-get($map: $colors, $key: bluish );
+       display: flex;
+       align-items: center;
+       border-radius: 10px 0 0 10px;
+       position: relative;
+       svg{
+           position: absolute;
+           top: 10px;
+           left: 10px;
+           font-size: 2.5rem;
+           color: white;
+       }
+       .content{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           width: 100%;
+           padding-bottom: 30px;
+          
+           h1{
+               font-size: 3rem;
+               color: white;
+           }
+           p{
+               font-size: 1.2rem;
+               color: white;
+               margin-top: 20px;
+           }
+           button.suggestion{
+            color: white;
+            border: 1px solid white;
+            background: none;
+            margin-top: 40px;
+           }
+           
+       }
+   }
+   .authForms{
+       width: 60%;
+       height: inherit;
+       position: relative;
+       .authPage{
+           width: 100%;
+           height: inherit;
+           
+       .login,.signup,.checkemail,.password_change,.error_page{
+           width: 100%;
+           height: inherit;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           .heading{
+               width: inherit;
+               text-align: center;
+               margin-bottom: 20px;
+              h1{
+                  font-size: 2.7rem;
+                  color: map-get($map: $colors, $key:bluish );
+              }
+           }
+           form{
+               width: 80%;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+
+               margin-bottom: 50px;
+               div.inp{
+                width: 100%;
+                height: 40px;
+                margin-bottom: 30px;
+                   display: flex;
+                   align-items: center;
+                   background-color: rgb(241, 238, 238);
+                   border-radius: 16px;
+                   padding-left: 20px;
+                   svg{
+                       font-size: 1.3rem;
+                  
+                    opacity: 0.8;
+                   }
+                //    title{
+                //     border: 1px solid map-get($map: $colors, $key:bluish );
+                // }
+               input[type=email],input[type=password],input[type=text]{
+                   width: 90%;
+                  height: inherit;
+                  background-color: rgb(241, 238, 238);
+                   outline: none;
+                   border: none;
+                   font-size: 1.3rem;
+                   padding-left: 20px;
+                   border-radius:0 16px 0;
+                  
+               }
+               input[type=password]{
+                   width: 85%;
+               }
+               ::placeholder{
+                   opacity: 0.7;
+               }
+            }
+               input[type=submit]{
+                   border: none;
+                   background-color: map-get($map: $colors, $key:bluish );
+                   color: white;
+               }
+               input[type=submit].disabled:hover{
+                   transform: scale(1);
+               }
+           }
+           .forgot_password{
+               width: 100%;
+               text-align: center;
+               button.change_pass{
+                   background: none;
+                   border: 1px solid map-get($map: $colors, $key:bluish );
+                   margin-top: 10px;
+                   font-size: 1rem;
+                   color: map-get($map: $colors, $key:bluish );
+               }
+           }
+       }
+       .password_change{
+           .heading{
+               h1{
+                   font-size: 2rem;
+               }
+           }
+       }
+       .checkemail{
+         h1{
+             font-size: 2.5rem;
+         }
+       }
+       .error_page{
+           .heading{
+               h1{
+                   span{
+                       border-right: 1px solid gray;
+                       padding-right: 5px;
+                   }
+               }
+           }
+       }
+   }
+}
+div.remove_auth_layout{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    svg{
+        font-size: 1.6rem;
+        color: map-get($map: $colors, $key: orangish);
+        cursor: pointer;
+    }
+}
+.loading{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    .load{
+        width: 200px;
+        height: 100px;
+        // border: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .dot{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            animation: dotanimation 1s ease-in-out infinite;
+        }
+    //     .dot:nth-child(1){
+    //         animation: dotanimation 0.5s ease-in-out infinite;
+    //     }
+    //     .dot:nth-child(2){
+    //         animation: dotanimation 0.5s ease-in-out infinite;
+    //     }
+    //    .dot:nth-child(3){
+    //         animation: dotanimation 1s ease-in-out infinite;
+    //     }
+    //     .dot:nth-child(4){
+    //         animation: dotanimation 1s ease-in-out infinite;
+    //     }
+    }
+}
+   }
+}
+
+@keyframes dotanimation {
+  from{
+       transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}

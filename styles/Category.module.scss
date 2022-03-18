@@ -1,0 +1,106 @@
+$colors:(
+   orangish:#fb6d6c,
+   bluish:#2b92e4
+);
+section.category_page{
+    width:100%;
+    height:auto;
+    min-height: 100vh;
+    margin-bottom: 50px;
+    .heading{
+        width: inherit;
+        text-align: center;
+        margin-top: 30px;
+        h1{
+            font-size: 2.8rem;
+            color: gray;
+        }
+    }
+    .all_cycles{
+        padding-top: 50px;
+        width: inherit;
+        height: inherit;
+        min-height: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1.no_Data{
+         margin-bottom: 50px;
+         font-size: 3rem;
+         border-left:1px solid gray ;
+         padding-left: 20px;
+        }
+        
+        article{
+            width: 90%;
+            height: 200px;
+            border-bottom: 1px solid map-get($map: $colors, $key:bluish );
+
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .image{
+                position: relative;
+                width: 250px;
+                height: 180px;
+                span.discount{
+                    position: absolute;
+                    left: -10px;
+                    top: -10px;
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid map-get($map: $colors, $key:orangish );
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: map-get($map: $colors, $key:bluish );
+                    font-size: 1.4rem;
+                }
+            }
+            .name_brand,.price{
+                width:max-content;
+                height: inherit;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                h2.name{
+                    color: map-get($map: $colors, $key:bluish );
+                }
+                h2.brand{
+                    color: gray;
+                }
+                h2{
+                    font-family: 'Roboto', sans-serif;
+                  font-size: 1.7rem;
+                }
+                h2.before_price{
+                    color: gray;
+                   text-decoration:line-through;
+                   text-decoration-color:map-get($map: $colors, $key:orangish ) ;
+                }
+                h2.actual_price{
+                    font-weight: 100;
+                }
+
+            }
+            button.check{
+                width: max-content;
+                height: 40px;
+                background: none;
+                outline: none;
+                border: 1px solid map-get($map: $colors, $key:bluish );
+                padding: 0 40px;
+                cursor: pointer;
+                border-radius: 20px;
+                transition: 0.5s ease-in-out;
+            }
+            button.check:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}

@@ -1,0 +1,342 @@
+$colors:(
+   orangish:#fb6d6c,
+   bluish:#2b92e4
+);
+section.cyclepage{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    article{
+      width: inherit;
+      height: 100vh;
+      display: flex;
+      padding: 20px;
+    
+    .cycle_image{
+        width: 50%;
+        height: 100vh;
+        .image_box{
+            width: 100%;
+            height: 400px;
+            // border: 1px solid gray;
+            position: relative;
+            cursor:pointer;
+           
+            img{
+                transition: 1s ease-in-out;
+            }
+            img:hover{
+                transform: scale(1.5);
+            }
+        }
+
+    }
+    .cycle_details{
+        width: 50%;
+        height: auto;
+        padding-left: 5px;
+        h1{
+            font-size: 2.7rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        .review{
+            margin: 10px 0;
+            width: 100%;
+            display: flex;
+            p{
+                margin-right: 50px;
+            }
+        }
+        .description{
+            width: 100%;
+            padding: 5px 5px 5px 0;
+            text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Roboto', sans-serif;
+        }
+        .brand_Category{
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: gray;
+            svg{
+                margin:0 30px;
+                font-size: 2rem;
+            }
+        }
+        .price{
+            display: flex;
+            h2:nth-child(1){
+               text-decoration: line-through;
+               color: gray;
+            }
+            h2:nth-child(2){
+                padding-left: 30px;
+                color: map-get($map: $colors, $key:bluish );
+            }
+        }
+        .delivery_time{
+            margin: 10px 0;
+        }
+        .add_Cart{
+            width: 100%;
+            select{
+                width: 50px;
+                height: 40px;
+                cursor: pointer;
+                font-size: 1.2rem;
+                outline: none;
+                border: 1px solid map-get($map: $colors, $key:bluish );
+                border-radius: 5px;
+            }
+        button.add_to_cart,button.add_to_cart_disable{
+            width: max-content;
+            height: 40px;
+            border-radius: 20px;
+            outline: none;
+            background-color: map-get($map: $colors, $key: bluish);
+            color: white;
+            font-size: 1.3rem;
+            border: none;
+            padding:0 50px ;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: 0.5s ease-in-out;
+            margin-right: 30px;
+        }
+        button.add_to_cart_disable{
+            background-color: #222e38;
+        }
+        button.add_to_cart_disable:hover{
+            transform: scale(1);
+        }
+        button.add_to_cart:hover{
+            transform: scale(1.1);
+            background-color: #106cb8;
+        }
+    }
+    }
+    }
+}
+
+section.cart_page,section.cart_page_order_placed{
+    width: 100%;
+    height: auto;
+    min-height: 120vh;
+    
+    position: relative;
+    .heading{
+        width: 100%;
+        text-align: center;
+        h1{
+            font-size: 3rem;
+        }
+    }
+    .address{
+        width: inherit;
+        height: auto;
+        margin: 50px 0;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        .left{
+            width: 70%;
+            h3{
+                font-size: 1.8rem;
+                color: gray;
+            }
+            .user_address{
+                p{
+                    font-size: 1.2rem;
+                    color: gray;
+                }
+                h4{
+                    font-size: 1.2rem;
+                    color: gray;
+                }
+            }
+        }
+        .right{
+            width: 30%;
+            text-align: center;
+            button{
+                width: max-content;
+                height: 40px;
+                border-radius: 20px;
+                outline: none;
+                background-color: map-get($map: $colors, $key: bluish);
+                color: white;
+                font-size: 1.3rem;
+                border: none;
+                padding:0 50px ;
+                cursor: pointer;
+                margin: 10px 0;
+                transition: 0.5s ease-in-out;
+                margin-right: 30px;
+            }
+        }
+       
+    }
+    .carts{
+        width: inherit;
+        height: auto;
+        min-height: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+        h1.no_cart{
+            font-size: 3rem;
+            color: gray;
+            margin-top: 50px;
+        }
+        .cart{
+            width: 90%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid map-get($map: $colors, $key:bluish );
+            margin-bottom: 30px;
+            border-radius: 10px;
+            position: relative;
+            .cycle_image{
+                width: 300px;
+                height: 200px;
+                position: relative;
+                // border: 1px solid gray;
+                margin-right: 50px;
+                
+            }
+            .details{
+                width: 350px;
+                height: 250px;
+                text-align: center;
+                margin-left: 30px;
+                font-family: 'Roboto', sans-serif;
+                padding-top: 20px;
+                h1{
+                    font-size: 2rem;
+                }
+                h3{
+                    text-transform: uppercase;
+                }
+                h5{
+                    margin-top: 20px;
+                    font-size: 1.5rem;
+                    font-weight: 100;
+                }
+                button.buy{
+                    width: 200px;
+                    height: 40px;
+                    margin-top: 30px;
+                    outline: none;
+                   background: none;
+                    border:1px solid map-get($map: $colors, $key: orangish);
+                    color: map-get($map: $colors, $key:orangish );
+                    font-size: 1.3rem;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    transition: 0.5s ease-in-out;
+                }
+                button.buy:hover{
+                    transform: scale(1.1);
+                    background-color: #fa2d2d;
+                    color: white;
+                }
+            }
+            .remove_cart{
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                right: 10px;
+                top: 5px;
+                svg{
+                    font-size: 1.8rem;
+                    color: map-get($map: $colors, $key:orangish );
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
+    .fetch_order_component{
+        width: inherit;
+        height: auto;
+        min-height: 600px;
+        .heading{
+            h2{
+                font-size: 2.4rem;
+                color: map-get($map: $colors, $key:bluish );
+                text-decoration: underline;
+                text-transform: uppercase;
+            }
+            margin-bottom: 70px;
+        }
+        
+        .orders{
+            width: inherit;
+            height: inherit;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+        article{
+            width: 90%;
+            height: 250px;
+            border: 1px solid map-get($map: $colors, $key:bluish );
+            border-radius: 10px;
+            margin-bottom: 50px;
+          
+            // padding-top: 60px;
+            .bike_name{
+                width: 100%;
+                height: 80px;
+                text-align: center;
+                h3{
+                    font-size: 2rem;
+                   
+
+                }
+            }
+            .cycle_Detail{
+            width: 100%;
+            height: 170px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-left: 20px;
+            .image{
+                width: 200px;
+                height: 150px;
+                position: relative;
+            }
+            .delivery_date{
+                width: 200px;
+              h4{
+                  text-align: center;
+                  font-size: 1.4rem;
+                  color: gray;
+              }
+
+            }
+            .payment_method,.ship_address{
+                h5{
+                    font-size: 1.5rem;
+                    color: gray;
+                }
+                h4{
+                    margin-top: 20px;
+                    text-transform: uppercase;
+                    color: gray;
+                }
+                width: 200px;
+                display: block;
+            }
+        }}
+        }
+    }
+   
+}

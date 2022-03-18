@@ -1,0 +1,348 @@
+$colors:(
+   orangish:#fb6d6c,
+   bluish:#2b92e4
+);
+nav.navbar,nav.navbar_open{
+    width: 100%;
+    height: 80px;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   padding-left: 10px;
+//    background-color: map-get($map: $colors, $key:bluish );
+box-shadow: 10px 0 20px map-get($map: $colors, $key:bluish );
+  z-index: 2;
+  transition: 0.5s ease-in-out;
+   .logo{
+       display: flex;
+       align-items: center;
+
+       color: map-get($map: $colors, $key:bluish );
+       user-select: none;
+   }
+//    overflow: hidden;
+   ul.navOptions{
+       list-style: none;
+       display: flex;
+       height: inherit;
+       align-items: center;
+       padding: 0 10px;
+    //    z-index: 6;
+       li{
+           margin-right: 20px;
+           font-size: 1.3rem;
+           cursor: pointer;
+           user-select: none;
+       }
+       li:hover{
+           color: map-get($map: $colors, $key:bluish );
+       }
+      
+       li.cartLogo{
+        position: relative;
+           svg{
+               color: map-get($map: $colors, $key:bluish );
+           }
+           span{
+               position: absolute;
+               font-size: 1.5rem;
+               font-weight: 600;
+               top: -22px;
+               left: 10px;
+               color: map-get($map: $colors, $key:orangish );
+           }
+       }
+       li.user_Btn{
+           z-index: 6;
+       }
+   }
+    .logo{
+        font-size: 3rem;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .bikes_category{
+        display: none;
+    }
+}
+nav.navbar_open:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 200px;
+    top: 80px;
+    left: 0;
+    background-color:white;
+    box-shadow: 0px 30px 30px map-get($map: $colors, $key:bluish );
+    transition: 0.5s ease-in-out;
+}
+nav.navbar_open{
+  .bikes_category{
+      position: absolute;
+      display: inline;
+      top: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      width: 70%;
+      ul{
+          display: flex;
+          list-style: none;
+          width: 100%;
+          justify-content: space-between;
+         li{
+             font-size: 1.2rem;
+             font-family: 'Roboto', sans-serif;
+             cursor: pointer;
+         }
+         li:hover{
+           color: map-get($map: $colors, $key:bluish );
+         }
+      }
+  }
+}
+
+header.home_header{
+    width: 100%;
+    height: calc(100vh - 80px); 
+    position: relative;
+    box-shadow: 10px 0 80px #76bef8;
+   .content{
+       position: absolute;
+       top: 60%;
+       left: 7%;
+       border-left: 1px solid map-get($map: $colors, $key:bluish );
+       padding-left: 5px;
+       h1{
+           color: rgb(240, 121, 141);
+        //    font-family: 'Hubballi', cursive;
+           font-size: 2.5rem;
+           font-weight: 100;
+        //    font-family: 'Lora', serif;
+        font-family: 'Roboto', sans-serif;
+       }
+   }
+   .best_deal{
+       position: absolute;
+       top: 7%;
+       left: 8%;
+       border-right: 1px solid rgb(240, 121, 141);
+       padding-right: 5px;
+       h1{
+        color: #2b92e4;
+     //    font-family: 'Hubballi', cursive;
+        font-size: 2.5rem;
+        font-weight: 100;
+        // font-family: 'Lora', serif;
+        font-family: 'Roboto', sans-serif;
+    }
+   }
+}
+
+
+
+div.front_page{
+    padding-top: 50px;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    section.our_cycles,section.our_cycles_mtb,section.our_cycles_hybrid,section.our_cycles_fat{
+       width: inherit;
+       height: 90vh;
+       display: flex;
+    //    border-bottom: 1px solid map-get($map: $colors, $key: bluish);
+       .image{
+           width: 70%;
+           height: 70vh;
+           position: relative;
+       }
+       .details{
+           width: 30%;
+           height: 70vh;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           h2{
+               font-size: 2.5rem;
+           }
+           button{
+               width: max-content;
+               height: 40px;
+               padding: 0 50px;
+               outline: none;
+               border: 1px solid map-get($map: $colors, $key:bluish);
+               cursor: pointer;
+               background: none;
+               border-radius: 20px;
+               transition: 0.5s ease-in-out;
+               margin-top: 20px;
+           }
+           button:hover{
+               transform: scale(1.1);
+           }
+       }
+    }
+    section.our_cycles_hybrid{
+        padding-top: 20px;
+        .image{
+            width: 60%;
+            height: 75vh;
+        }
+    }
+    section.our_cycles_mtb{
+        .image{
+            width: 65%;
+        }
+    }
+    section.our_cycles_fat{
+        padding-top: 40px;
+        padding-left: 20px;
+        .image{
+            width: 55%;
+            height: 60vh;
+        }
+        .details{
+            width: 45%;
+        }
+    }
+    section.cycle_love,section.cycle_love_more,section.cycle_love_tyre{
+        width: inherit;
+        height: 100vh;
+        // border-bottom: 1px solid map-get($map: $colors, $key: bluish);
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 0 50px;
+        box-shadow: -10px 0 80px map-get($map: $colors, $key:bluish );
+        .image{
+            width: 50%;
+            height: 90vh;
+            position: relative;
+            box-shadow: 2px 2px 20px gray;
+            img{
+                border-radius:10px ;
+              
+            }
+           
+        }
+        .details{
+            width: 50%;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 40px;
+            flex-direction: column;
+            h2{
+                font-size: 4rem;
+                font-family: 'Hubballi', cursive;
+            }
+            .sign{
+                margin-left: 50px;
+                span{
+                    font-size: 2rem;
+                    font-family: 'Dancing Script', cursive;
+                }
+            }
+        }
+    }
+    section.cycle_love_tyre{
+        // .image{
+        //     width: 60%;
+        //     height: 95vh;
+        //     box-shadow: 2px 2px 10px gray;
+        // }
+        .details{
+            width: 40%;
+            h2{
+                font-size: 3rem;
+                padding-right: 50px;
+            }
+            button.see_bikes{
+                width: max-content;
+                height: 40px;
+                padding: 0 50px;
+                outline: none;
+                border: 1px solid map-get($map: $colors, $key:bluish);
+                cursor: pointer;
+                background: none;
+                border-radius: 20px;
+                transition: 0.5s ease-in-out;
+                margin-top: 20px;
+                margin-right: 50px;
+            }
+            button.see_bikes:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+    section.cycle_love_more{
+        .image{
+            width: 55%;
+        }
+        .details{
+            width: 45%;
+            padding-right: 30px;
+        }
+    }
+}
+
+section.footer{
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-color: map-get($map: $colors, $key:bluish );
+   
+    .footer_component{
+   width: inherit;
+   height: inherit;
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-around;
+   padding-left: 10px;
+   padding-top: 100px;
+   position: relative;
+    .logo{
+        display: flex;
+        align-items: center;
+        user-select: none;
+        svg{
+            color: white;
+            font-size: 3rem;
+        }
+        h1{
+            font-size: 3rem;
+            color: white;
+        }
+    }
+    .categories,.aboutus{
+        color: white;
+        font-size: 1.4rem;
+        // font-family: 'Hubballi', cursive;
+        font-family: 'Roboto', sans-serif;
+        ul{
+            li{
+                cursor: pointer;
+
+            }
+            li:hover{
+                color: wheat;
+            }
+        }
+    }
+    .copyright{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        color: white;
+        svg{
+            font-size: 2rem;
+        }
+    }
+}
+}
