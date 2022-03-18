@@ -45,7 +45,10 @@ const Register = (props:propType) => {
         if(res.status === 201){
             setLoading(false)
             setActiveAuthPage(3)
-        }  
+        }else{
+            setLoading(false)
+            setActiveAuthPage(6)
+           }  
      }
 
   return (

@@ -51,6 +51,9 @@ const Login = (props:propType) => {
                router.push('/')
            }
           
+       }else{
+        setLoading(false)
+        setActiveAuthPage(6)
        }
         
      }
